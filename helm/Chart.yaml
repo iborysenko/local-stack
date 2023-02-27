@@ -1,0 +1,24 @@
+apiVersion: v3
+name: development-chart
+description: Development chart for common used services
+version: 1.0.0
+dependencies:
+  - name: mysql
+    version: 9.4.5
+    repository: https://charts.bitnami.com/bitnami
+    condition: mysql.release
+
+  - name: rabbitmq
+    version: 11.2.2
+    repository: https://charts.bitnami.com/bitnami
+    condition: rabbitmq.release
+
+  - name: redis
+    version: 16.11.3
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.release
+
+  - name: elasticsearch
+    version: 19.5.12
+    repository: https://charts.bitnami.com/bitnami
+    condition: elasticsearch.release

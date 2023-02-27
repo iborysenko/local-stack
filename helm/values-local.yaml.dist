@@ -1,0 +1,11 @@
+mysql:
+  release: true
+
+rabbitmq:
+  release: true
+
+redis:
+  release: false
+
+elasticsearch:
+  release: false

@@ -1,0 +1,59 @@
+mysql:
+  release: true
+  auth:
+    database: db
+    username: db
+    password: db
+    rootPassword: db
+  primary:
+    persistence:
+      enabled: true
+      size: 4Gi
+
+rabbitmq:
+  release: true
+  auth:
+    username: rabbitmq
+    password: rabbitmq
+    erlangCookie: rabbitmq
+  persistence:
+    enabled: true
+    size: 4Gi
+
+redis:
+  release: true
+  architecture: standalone
+  auth:
+    enabled: false
+  master:
+    disableCommands: []
+    persistence:
+      enabled: true
+      size: 4Gi
+
+elasticsearch:
+  release: true
+  esJavaOpts: "-Xmx128m -Xms128m"
+  antiAffinity: "soft"
+  master:
+    replicaCount: 1
+    heapSize: 1024m
+    persistence:
+      size: 4Gi
+  coordinating:
+    replicaCount: 1
+    persistence:
+      size: 4Gi
+  data:
+    replicaCount: 1
+    persistence:
+      size: 4Gi
+  ingest:
+    enabled: false
+  resources:
+    requests:
+      cpu: "512m"
+      memory: "1Gi"
+    limits:
+      cpu: "1024m"
+      memory: "2Gi"
